@@ -4,15 +4,15 @@ function phoneNumberMount(numbers) {
   let numbers1 = '';
   let numbers2 = '';
   for (let key of numbers) {
-    if (prefix.length <= 2) {
-      prefix += key;
+    if (prefix.length <= 1) {
+      prefix = prefix.concat(key);
     }
-    else if (numbers1 <= 5) {
-      numbers1 += key;
+    else if (numbers1.length <= 4) {
+      numbers1 = numbers1.concat(key);
     }
-    else { numbers2 += key; }
+    else { numbers2 = numbers2.concat(key); }
   }
-  return '(' + prefix + ')' + ' ' + numbers1 + '-' + numbers2;
+  return `(${prefix}) ${numbers1}-${numbers2}`;
 }
 
 function repeatedNumbers(numbers) {
@@ -23,17 +23,17 @@ function repeatedNumbers(numbers) {
         repeated += 1;
       }
     }
-    if (repeated >= 3) {
-      return 'não é possível gerar um número de telefone com esses valores';
+    if (repeated > 2) {
+      return 'não é possível gerar um número de telefone com esses valores 2' + repeated;
     }
   }
-  return numbers;
+  return phoneNumberMount(numbers);
 }
 
 function checkNumbers(numbers) {
   for (let key of numbers) {
     if (key === 9 || key === 0) {
-      return 'não é possível gerar um número de telefone com esses valores';
+      return 'não é possível gerar um número de telefone com esses valores 1';
     }
   }
   return repeatedNumbers(numbers);
@@ -47,12 +47,10 @@ function amountOfNumbers(numbers) {
 }
 
 function generatePhoneNumber(phoneNumber) {
-  if (typeof amountOfNumbers(phoneNumber) === String) {
-    return typeof amountOfNumbers(phoneNumber);
-  }
-  return phoneNumberMount(phoneNumber);
+  return amountOfNumbers(phoneNumber);
 }
-let numero = [11223366554];
+
+let numero = [1, 1, 2, 2, 3, 3, 6, 6, 5, 5, 7];
 console.log(generatePhoneNumber(numero));
 
 // Desafio 12
