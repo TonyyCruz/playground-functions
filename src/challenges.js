@@ -101,19 +101,34 @@ function encode(string) {
   let result = '';
   for (let key of imput) {
     result += codifique(key);
-  } return result;
+  }
+  return result;
 }
 function decode(string2) {
   let imput = string2.split('');
   let result = '';
   for (let key of imput) {
     result += decodifique(key);
-  } return result;
+  }
+  return result;
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function objectMount(tec, nam) {
+  let mount = { tech: tec, name: nam };
+  return mount;
+}
+
+function techList(tech, name) {
+  let result = [];
+  let list = tech.sort();
+  if (tech.length > 0) {
+    for (let key of list) {
+      result.push(objectMount(key, name));
+    }
+    return result;
+  }
+  return 'Vazio!';
 }
 
 module.exports = {
