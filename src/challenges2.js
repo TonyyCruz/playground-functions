@@ -78,21 +78,21 @@ function waterTest(string) {
   for (let key of string) {
     if (key > -1) {
       waterCups += Math.abs(key);
-      console.log(key, true);
     }
-    // console.log(typeof key)
     console.log(key);
   }
-  return `${waterCups} compos de água`;
+  return waterCups;
 }
 
 function hydrate(string) {
-  let splited = string.split(' ');
-  console.log(waterTest(splited));
-  // return waterTest(string.split(' '));
+  let number = waterTest(string.split(' '));
+  if (number <= 1) {
+    return `${number} copo de água`;
+  }
+  return `${number} copos de água`;
 }
-let bebidas = '3 cervejas e 5 vinho';
-hydrate(bebidas);
+// let bebidas = '3 cervejas e 5 vinho';
+// hydrate(bebidas);
 
 // console.log(bebidas.split(' '));
 
