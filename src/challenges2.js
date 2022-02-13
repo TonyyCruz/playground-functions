@@ -49,8 +49,8 @@ function generatePhoneNumber(phoneNumber) {
 }
 
 // Desafio 12
-function triangleTest2(lineA, lineB, lineC) {
-  if (Math.abs(lineA - lineB) < lineC && Math.abs(lineB - lineC) < lineA && Math.abs(lineA - lineC) < lineB) {
+function triangleTest2(A, B, C) {
+  if (Math.abs(A - B) < C && Math.abs(B - C) < A && Math.abs(A - C) < B) {
     return true;
   }
   return false;
