@@ -6,11 +6,9 @@ function phoneNumberMount(numbers) {
   for (let key of numbers) {
     if (prefix.length <= 1) {
       prefix = prefix.concat(key);
-    }
-    else if (numbers1.length <= 4) {
+    } else if (numbers1.length <= 4) {
       numbers1 = numbers1.concat(key);
-    }
-    else { numbers2 = numbers2.concat(key); }
+    } else { numbers2 = numbers2.concat(key); }
   }
   return `(${prefix}) ${numbers1}-${numbers2}`;
 }
@@ -52,7 +50,7 @@ function generatePhoneNumber(phoneNumber) {
 
 // Desafio 12
 function triangleTest2(lineA, lineB, lineC) {
- if (Math.abs(lineA - lineB) < lineC && Math.abs(lineB - lineC) < lineA && Math.abs(lineA - lineC) < lineB) {
+  if (Math.abs(lineA - lineB) < lineC && Math.abs(lineB - lineC) < lineA && Math.abs(lineA - lineC) < lineB) {
     return true;
   }
   return false;
