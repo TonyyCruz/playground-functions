@@ -73,9 +73,28 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function waterTest(string) {
+  let waterCups = 0;
+  for (let key of string) {
+    if (key > -1) {
+      waterCups += Math.abs(key);
+      console.log(key, true);
+    }
+    // console.log(typeof key)
+    console.log(key);
+  }
+  return `${waterCups} compos de água`;
 }
+
+function hydrate(string) {
+  let splited = string.split(' ');
+  console.log(waterTest(splited));
+  // return waterTest(string.split(' '));
+}
+let bebidas = '3 cervejas e 5 vinho';
+hydrate(bebidas);
+
+// console.log(bebidas.split(' '));
 
 module.exports = {
   generatePhoneNumber,
